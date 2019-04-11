@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <style>
+            .text{
+                height: 100px;
+                
+            }
+            .space{
+                height: 5%;
+            }
+            
+            #position_start{
+                display: none;
+            }
+        </style>
+    </head>
+    
+    
+    <body id="body">
+       
+       <div>
+        <textarea class="text" id="text"></textarea>
+       </div>
+        <div class="space"></div>
+       <div>
+           <button onclick="read_button()" id="read_button">READ</button>
+       </div>
+        <div class="space"></div>
+       <div>
+           <label>Поиск: </label><input type="text" value="" id="search_input">
+       </div>
+       
+       <label id="position_start" >
+           Найденно!
+       </label>
+        
+        <script>
+            function read_button()
+            {
+               var str = document.getElementById("text").value;
+               var searchText = document.getElementById("search_input").value;
+              
+                
+               /* if (str.length == 0){
+                    alert("error");
+                }else{
+                //длина строки
+            //  alert(str.length);
+                //вывод ПРЕДПОСЛЕДНЕГО символа
+            //  alert(str.charAt(str.length-2));
+                //центральный символ
+                alert(str.charAt(str.length/2));
+                }
+                */
+                
+             
+                if(str.indexOf(searchText) > -1){
+                     
+               
+                   //установим высоту кнопки такую же как и
+                    //количество искомых символов
+                    document.getElementById("read_button").style.height = searchText.length * 3;
+                   
+                    
+                   //меняем цвет поля ввода на зеленный
+                    document.getElementById("search_input").style.backgroundColor = "green";
+                    
+                    
+               //открыть элемент для просмотра (по умолчанию он скрыт)
+                    document.getElementById("position_start").style.display = "inline";
+                }
+                else
+                    {
+                   
+                         //скрыть элемент
+                        document.getElementById("position_start").style.display = "none";
+                        document.getElementById("search_input").style.backgroundColor = "red";
+                    }
+            }
+        </script>
+        
+        
+    </body>
+    
+    
+    
+    
+</html>
