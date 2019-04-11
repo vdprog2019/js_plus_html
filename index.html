@@ -10,7 +10,12 @@
             }
             
             #position_start{
+                margin-top: 25%;
                 display: none;
+                border-radius: 100px; /* Радиус скругления */
+                border: 3px solid green; /* Параметры рамки */
+                font-size: 30px;
+                color: green;
             }
         </style>
     </head>
@@ -29,11 +34,11 @@
        <div>
            <label>Поиск: </label><input type="text" value="" id="search_input">
        </div>
-       
-       <label id="position_start" >
-           Найденно!
-       </label>
-        
+       <div>
+           <label id="position_start" >
+               Найденно!
+           </label>
+        </div>
         <script>
             function read_button()
             {
@@ -52,6 +57,7 @@
                 alert(str.charAt(str.length/2));
                 }
                 */
+                
                 
              
                 if(str.indexOf(searchText) > -1){
